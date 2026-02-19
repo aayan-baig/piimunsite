@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PII Model United Nations</title>
+  <meta name="description" content="PII Model United Nations — Register now." />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#101824;
+      --text:#e9eef6;
+      --muted:#a8b3c7;
+      --accent:#f5c84c;
+      --stroke: rgba(255,255,255,.08);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1060px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      background: radial-gradient(1000px 600px at 50% -20%, rgba(245,200,76,.18), transparent 60%),
+                  radial-gradient(900px 700px at 20% 10%, rgba(110,160,255,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    body:before{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+      opacity:.05;
+      mix-blend-mode:overlay;
+    }
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      position:relative;
+      padding:42px 0 28px;
+    }
+    .hero-inner{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+      text-align:center;
+    }
+
+    .logo{
+      width:min(340px, 68vw);
+      aspect-ratio:1/1;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      box-shadow: var(--shadow);
+      border:1px solid var(--stroke);
+      overflow:hidden;
+      background: rgba(255,255,255,.04);
+      transform: translateY(6px);
+      animation: float 6s ease-in-out infinite;
+    }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform: scale(1.02);
+    }
+
+    @keyframes float{
+      0%,100%{ transform: translateY(6px) }
+      50%{ transform: translateY(-8px) }
+    }
+
+    .title{
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing:.2px;
+      margin:0;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size: 15px;
+      line-height:1.45;
+      max-width: 56ch;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill{
+      padding:8px 12px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      border-radius:999px;
+      backdrop-filter: blur(10px);
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:6px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius: 999px;
+      border:1px solid var(--stroke);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:650;
+      letter-spacing:.2px;
+      background: rgba(255,255,255,.03);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      will-change: transform;
+    }
+    .btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(245,200,76,.95), rgba(245,200,76,.75));
+      color:#1b1609;
+      border-color: rgba(245,200,76,.55);
+      box-shadow: 0 14px 40px rgba(245,200,76,.20);
+    }
+    .btn.primary:hover{ transform: translateY(-3px); }
+
+    .scroll-hint{
+      position:absolute;
+      bottom:22px;
+      left:0; right:0;
+      display:flex;
+      justify-content:center;
+      color:rgba(233,238,246,.55);
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      gap:10px;
+      align-items:center;
+    }
+    .dot{
+      width:6px;height:6px;border-radius:50%;
+      background: rgba(245,200,76,.8);
+      box-shadow: 0 0 18px rgba(245,200,76,.55);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{ transform: scale(1); opacity:.7 }
+      50%{ transform: scale(1.6); opacity:1 }
+    }
+
+    /* SECTIONS */
+    section{ padding: 74px 0; border-top:1px solid rgba(255,255,255,.04); }
+    .section-title{
+      margin:0 0 10px;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .section-sub{
+      margin:0 0 24px;
+      color:var(--muted);
+      line-height:1.6;
+      max-width: 72ch;
+    }
+
+    .grid{
+      display:grid;
+      gap:14px;
+    }
+    .grid.facts{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid.committees{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.people{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding:16px 16px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.22);
+      overflow:hidden;
+      position:relative;
+    }
+    .card:after{
+      content:"";
+      position:absolute;
+      inset:-40% -40% auto auto;
+      width:220px;height:220px;
+      background: radial-gradient(circle at 30% 30%, rgba(245,200,76,.15), transparent 60%);
+      transform: rotate(22deg);
+      pointer-events:none;
+    }
+    .k{ color:var(--muted); font-size:12px; letter-spacing:.14em; text-transform:uppercase; }
+    .v{ font-size:16px; margin-top:6px; font-weight:650; }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      margin-top:10px;
+      width: fit-content;
+    }
+
+    .row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .row .card{ flex: 1 1 240px; }
+
+    .timeline{
+      display:grid;
+      gap:12px;
+    }
+    .tl-item{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+    .tl-time{
+      min-width: 110px;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    .tl-body{
+      flex:1;
+      border-left: 2px solid rgba(245,200,76,.25);
+      padding-left: 14px;
+    }
+
+    footer{
+      padding: 34px 0 50px;
+      color:rgba(233,238,246,.6);
+      font-size:13px;
+    }
+    footer a{ color: rgba(245,200,76,.9); text-decoration:none; border-bottom:1px dashed rgba(245,200,76,.35); }
+
+    /* Scroll reveal */
+    .reveal{
+      opacity:0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);
+      will-change: opacity, transform;
+    }
+    .reveal.show{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .grid.facts{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid.committees{ grid-template-columns: 1fr; }
+      .grid.people{ grid-template-columns: 1fr; }
+      .tl-time{ min-width: 92px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="logo" aria-label="Conference logo">
+        <img src="logo.jpg" alt="PII Model United Nations logo" />
+      </div>
+
+      <h1 class="title">PII Model United Nations</h1>
+      <p class="sub">A student-led conference focused on diplomacy, debate, and real-world problem solving.</p>
+
+      <div class="meta">
+        <div class="pill">📍 Placeholder Venue</div>
+        <div class="pill">📅 00–00 Month 2026</div>
+        <div class="pill">🎓 School / College MUN</div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="#register">Register Now</a>
+        <a class="btn" href="#committees">View Committees</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span class="dot"></span>
+      <span>Scroll</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <div class="reveal">
+          <h2 class="section-title">About the Conference</h2>
+          <p class="section-sub">
+            Placeholder text: PII MUN brings together delegates to debate pressing global issues,
+            collaborate on solutions, and build confidence through structured committee sessions.
+          </p>
+        </div>
+
+        <div class="grid facts">
+          <div class="card reveal">
+            <div class="k">Dates</div>
+            <div class="v">00–00 Month 2026</div>
+          </div>
+          <div class="card reveal">
+            <div class="k">Venue</div>
+            <div class="v">Placeholder Auditorium</div>
+          </div>
+          <div class="card reveal">
+            <div class="k">Committees</div>
+            <div class="v">4 Committees</div>
+          </div>
+          <div class="card reveal">
+            <div class="k">Delegate Fee</div>
+            <div class="v">₹ 000 (Placeholder)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="committees">
+      <div class="wrap">
+        <div class="reveal">
+          <h2 class="section-title">Committees</h2>
+          <p class="section-sub">Short agendas only — full background guides can be linked in Resources.</p>
+        </div>
+
+        <div class="grid committees">
+          <div class="card reveal">
+            <div class="v">UNGA</div>
+            <div class="section-sub" style="margin:10px 0 0;">
+              Agenda: Placeholder agenda line that fits in one sentence.
+            </div>
+            <div class="tag">Intermediate</div>
+          </div>
+
+          <div class="card reveal">
+            <div class="v">UNSC</div>
+            <div class="section-sub" style="margin:10px 0 0;">
+              Agenda: Placeholder agenda line that fits in one sentence.
+            </div>
+            <div class="tag">Advanced</div>
+          </div>
+
+          <div class="card reveal">
+            <div class="v">WHO</div>
+            <div class="section-sub" style="margin:10px 0 0;">
+              Agenda: Placeholder agenda line that fits in one sentence.
+            </div>
+            <div class="tag">Beginner-friendly</div>
+          </div>
+
+          <div class="card reveal">
+            <div class="v">AIPPM</div>
+            <div class="section-sub" style="margin:10px 0 0;">
+              Agenda: Placeholder agenda line that fits in one sentence.
+            </div>
+            <div class="tag">Intermediate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="secretariat">
+      <div class="wrap">
+        <div class="reveal">
+          <h2 class="section-title">Secretariat</h2>
+          <p class="section-sub">Keep it clean: names + roles. You can add photos later if needed.</p>
+        </div>
+
+        <div class="grid people">
+          <div class="card reveal">
+            <div class="v">Full Name</div>
+            <div class="k" style="margin-top:6px;">Secretary-General</div>
+          </div>
+          <div class="card reveal">
+            <div class="v">Full Name</div>
+            <div class="k" style="margin-top:6px;">Director-General</div>
+          </div>
+          <div class="card reveal">
+            <div class="v">Full Name</div>
+            <div class="k" style="margin-top:6px;">Chargé d’Affaires</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <div class="wrap">
+        <div class="reveal">
+          <h2 class="section-title">Schedule</h2>
+          <p class="section-sub">Short, readable timeline. No giant tables.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item card reveal">
+            <div class="tl-time">Day 1</div>
+            <div class="tl-body">
+              <div class="v" style="font-size:15px;">Opening Ceremony</div>
+              <div class="section-sub" style="margin:6px 0 0;">Registration • Opening • Committee Session 1</div>
+            </div>
+          </div>
+
+          <div class="tl-item card reveal">
+            <div class="tl-time">Day 2</div>
+            <div class="tl-body">
+              <div class="v" style="font-size:15px;">Committee Sessions</div>
+              <div class="section-sub" style="margin:6px 0 0;">Session 2 • Lunch • Session 3 • Social</div>
+            </div>
+          </div>
+
+          <div class="tl-item card reveal">
+            <div class="tl-time">Day 3</div>
+            <div class="tl-body">
+              <div class="v" style="font-size:15px;">Closing</div>
+              <div class="section-sub" style="margin:6px 0 0;">Final Session • Closing Ceremony • Awards</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="wrap">
+        <div class="reveal">
+          <h2 class="section-title">Resources</h2>
+          <p class="section-sub">Replace these with real PDF links later.</p>
+        </div>
+
+        <div class="row">
+          <div class="card reveal">
+            <div class="v">Background Guides</div>
+            <p class="section-sub" style="margin:10px 0 0;">Placeholder: Add Google Drive / website links.</p>
+            <a class="btn" href="#" onclick="return false;">Download (Soon)</a>
+          </div>
+          <div class="card reveal">
+            <div class="v">Code of Conduct</div>
+            <p class="section-sub" style="margin:10px 0 0;">Placeholder: 1-page PDF.</p>
+            <a class="btn" href="#" onclick="return false;">Download (Soon)</a>
+          </div>
+          <div class="card reveal">
+            <div class="v">Country Matrix</div>
+            <p class="section-sub" style="margin:10px 0 0;">Placeholder: Excel/PDF.</p>
+            <a class="btn" href="#" onclick="return false;">Download (Soon)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="register">
+      <div class="wrap">
+        <div class="reveal">
+          <h2 class="section-title">Register</h2>
+          <p class="section-sub">Use a Google Form or a proper registration portal link.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="v">Registration Link</div>
+          <p class="section-sub" style="margin:10px 0 0;">
+            Placeholder: Replace this button with your real link.
+          </p>
+          <a class="btn primary" href="https://example.com" target="_blank" rel="noreferrer">Register Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="reveal">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-sub">Keep it simple and direct.</p>
+        </div>
+
+        <div class="row">
+          <div class="card reveal">
+            <div class="k">Email</div>
+            <div class="v">pilmun@example.com</div>
+          </div>
+          <div class="card reveal">
+            <div class="k">Instagram</div>
+            <div class="v">@pilmun</div>
+          </div>
+          <div class="card reveal">
+            <div class="k">Location</div>
+            <div class="v">Placeholder City</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="y"></span> PII Model United Nations • Built by the team
+      • <a href="#register">Register</a>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Scroll reveal (smooth, minimal, no overkill)
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12 });
+
+    els.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
