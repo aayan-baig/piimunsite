@@ -20,8 +20,8 @@
   function parallaxWatermark(){
     if(!wm) return;
     var y = window.scrollY || 0;
-    var t = 8 + y * 0.018;
-    wm.style.transform = "translateY(" + t + "px) scale(1.03)";
+    var t = 6 + y * 0.016;
+    wm.style.transform = "translateY(" + t + "px) scale(1.02)";
   }
 
   function revealInit(){

@@ -1,5 +1,4 @@
-home 
-about us
-committees
-all detials of conference in front page
-secretariat --> our team
+new changes:
+the theme is a bit golden-yellow, so try matching to it.
+a place to attach a matrix of all the countries
+place for photos of secretariat and founders

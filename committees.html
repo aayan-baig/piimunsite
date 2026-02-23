@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Committees | PIIMUN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.committees-hero{
+  border:1px solid var(--stroke);
+  border-radius:var(--r18);
+  overflow:hidden;
+  background:rgba(255,255,255,.18);
+  box-shadow:0 18px 40px rgba(43,29,20,.10);
+  margin-top:6px;
+}
+.committees-hero img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+.committees-hero .cap{
+  padding:14px 16px;
+  background:rgba(255,255,255,.22);
+  border-top:1px solid rgba(43,29,20,.10);
+  color:rgba(43,29,20,.72);
+  font-weight:600;
+  line-height:1.6;
+  font-size:14px;
+}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin:18px 0 12px;
+}
+.section-head .title{
+  font-family:Cinzel, serif;
+  font-size:18px;
+  letter-spacing:.06em;
+  margin:0;
+}
+.section-head .meta{
+  font-size:13px;
+  color:var(--muted);
+  font-weight:600;
+  margin:0;
+}
+.committee-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.committee-card{
+  border:1px solid var(--stroke);
+  border-radius:var(--r18);
+  background:rgba(255,255,255,.22);
+  overflow:hidden;
+  box-shadow:0 18px 40px rgba(43,29,20,.08);
+}
+.committee-card .top{
+  display:flex;
+  gap:14px;
+  padding:16px;
+}
+.committee-card .thumb{
+  width:74px;
+  height:74px;
+  border-radius:16px;
+  overflow:hidden;
+  flex:0 0 auto;
+}
+.committee-card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.committee-card h3{
+  margin:0 0 8px;
+  font-size:16px;
+}
+.committee-card p{
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.65;
+}
+.badges{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.badge{
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  border:1px solid rgba(43,29,20,.14);
+  background:rgba(255,255,255,.24);
+  color:rgba(43,29,20,.75);
+}
+.badge.dark{
+  background:rgba(43,29,20,.9);
+  color:#fff;
+}
+.note-panel{
+  margin-top:18px;
+  padding:16px;
+  border-radius:var(--r18);
+  border:1px solid var(--stroke);
+  background:rgba(43,29,20,.06);
+  font-weight:600;
+}
+@media(max-width:980px){
+  .committee-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body data-page="committees">
+
+<div class="nav-shell">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="brand-badge"><img src="logo.jpg" alt="PIIMUN"></span>
+      <span class="brand-name">PIIMUN</span>
+    </a>
+
+    <div class="tabs">
+      <a data-tab="home" href="index.html">Home</a>
+      <a data-tab="about" href="about.html">About Us</a>
+      <a data-tab="committees" href="committees.html">Committees</a>
+      <a data-tab="team" href="team.html">Our Team</a>
+    </div>
+
+    <div class="nav-cta">
+      <a class="btn" href="https://linktr.ee/PiiModelUN" target="_blank" rel="noreferrer">Register Now</a>
+    </div>
+  </nav>
+</div>
+
+<main class="fade-page">
+  <div class="wrapper">
+
+    <div class="page-head">
+      <h1 class="page-title reveal">Committees</h1>
+      <p class="page-sub reveal">Choose from our 5 exciting committees.</p>
+    </div>
+
+    <div class="committees-hero reveal">
+      <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=2200&q=80" alt="">
+      <div class="cap">High-quality debate. Strong executive boards. Meaningful diplomacy.</div>
+    </div>
+
+    <div class="panel reveal" style="margin-top: 40px;">
+
+      <div class="section-head">
+        <p class="title">College Committees</p>
+        <p class="meta">Open for Grade 8 or above only</p>
+      </div>
+
+      <div class="committee-grid">
+
+        <div class="committee-card reveal">
+          <div class="top">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="">
+            </div>
+            <div>
+              <h3>UNSC (United Nations Security Council)</h3>
+              <p>Strengthening UN Peacekeeping Mandates for the Prevention of Mass Atrocities under the Responsibility to Protect.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="committee-card reveal">
+          <div class="top">
+            <div class="thumb">
+              <img src="https://th.bing.com/th/id/OIP.H7RAWGkrrl4zStX71DUSOwHaEK?w=291&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="">
+            </div>
+            <div>
+              <h3>Lok Sabha</h3>
+              <p>Deliberating upon the feasibility of a Uniform Civil Code in India.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="committee-card reveal">
+          <div class="top">
+            <div class="thumb">
+              <img src="https://th.bing.com/th/id/OIP.6Ht0lUG7i31VwQ6bnFaKcAHaEL?w=275&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="">
+            </div>
+            <div>
+              <h3>CCC (Constant Crisis Committee)</h3>
+              <p><i>Classified</i></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-head">
+        <p class="title">School Committees</p>
+        <p class="meta">Open for Grades 6 to 12</p>
+      </div>
+
+      <div class="committee-grid">
+
+        <div class="committee-card reveal">
+          <div class="top">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=80" alt="">
+            </div>
+            <div>
+              <h3>UNHRC (United Nations Human Rights Council)</h3>
+              <p>Deliberation on the human right to freedom of speech and freedom of press with emphasis on the Iran protests.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="committee-card reveal">
+          <div class="top">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="">
+            </div>
+            <div>
+              <h3>UNICEF (United Nations Children's Fund)</h3>
+              <p>Deliberation on the protection and rehabilitation of children in conflict zones.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="note-panel">
+        PLEASE NOTE: Cash prizes are <strong>only</strong> for College Committees!
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
